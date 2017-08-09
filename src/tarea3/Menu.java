@@ -10,7 +10,13 @@ public class Menu {
     
     private boolean flag = true;
     private int opcion;
-    
+    private int opcionu;
+    String vector[] = new String[5];
+    boolean buscarp=false;
+    String buscarn;
+    private String palabra;
+    private boolean flag2 = true;
+           
     public Menu(){
                 
         System.out.println("TAREA 3");
@@ -25,19 +31,92 @@ public class Menu {
             opcion = sc.nextInt();
                   
             switch(opcion){
-            
-                case 1:                        
+                
+                //USUARIOS
+                
+                case 1:
+                    flag2=true;
                     System.out.println("MENU DE USUARIOS");
                     System.out.println("1. Ingresar Usuarios");
                     System.out.println("2. Mostrar Todos Los Usuarios");
                     System.out.println("3. Mostrar Un Usuraio Personalizado");
                     System.out.println("4. Menu Principal");
-                    System.out.println("5. Salir");                                                        
+                    
+                    while(flag2){
+                        
+                        Scanner scu = new Scanner(System.in);
+                        opcionu = scu.nextInt();
+                    
+                        switch(opcionu){
+
+                            case 1:
+                                for(int i=0; i<vector.length; i++){
+                                   System.out.println("Ingresar Usuario");
+                                   Scanner sciu = new Scanner(System.in);
+                                   vector[i] = sciu.nextLine();
+                                }
+                                System.out.println("MENU DE USUARIOS");
+                                System.out.println("1. Ingresar Usuarios");
+                                System.out.println("2. Mostrar Todos Los Usuarios");
+                                System.out.println("3. Mostrar Un Usuraio Personalizado");
+                                System.out.println("4. Menu Principal");
+                            break;
+
+                            case 2:
+                                System.out.println("Todos los Usuarios");
+                                for(int i=0; i<vector.length; i++){
+                                    System.out.println(vector[i]);
+                                }
+                                System.out.println("MENU DE USUARIOS");
+                                System.out.println("1. Ingresar Usuarios");
+                                System.out.println("2. Mostrar Todos Los Usuarios");
+                                System.out.println("3. Mostrar Un Usuraio Personalizado");
+                                System.out.println("4. Menu Principal");
+                            break;
+
+                            case 3:
+                                System.out.println("Mostrar Usuario Personalizado");
+                                System.out.println("Ingresar Usuario");
+
+                                Scanner scb = new Scanner(System.in);
+                                buscarn = scb.nextLine();
+
+                                for(int i=0; i<vector.length; i++){
+                                    if(buscarn.equalsIgnoreCase(vector[i])){
+                                        buscarp=true;
+                                    }else{
+                                        System.out.println("No existe este usuario");
+                                    }
+                                }
+                                System.out.println("MENU DE USUARIOS");
+                                System.out.println("1. Ingresar Usuarios");
+                                System.out.println("2. Mostrar Todos Los Usuarios");
+                                System.out.println("3. Mostrar Un Usuraio Personalizado");
+                                System.out.println("4. Menu Principal");
+                            break;
+
+                            case 4:
+                                System.out.println("TAREA 3");
+                                System.out.println("201602491");
+                                System.out.println("1. Usuarios");
+                                System.out.println("2. Palabras Palíndromas");
+                                System.out.println("3. Salir");
+                                flag2=false;
+                            break;
+                            
+                        }
+                    }
                 break;
+                
+                //PALINDROMAS
                 
                 case 2:
                     System.out.println("PALABRAS PALINDROMAS");
                     System.out.println("Ingresar Palabra");
+                    
+                    Scanner scp = new Scanner(System.in);
+                    palabra = scp.nextLine();
+                                       
                 break;
                 
                 case 3:
@@ -49,5 +128,4 @@ public class Menu {
         }
                 
     }
-    
 }
