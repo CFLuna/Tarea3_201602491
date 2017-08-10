@@ -9,12 +9,16 @@ import java.util.Scanner;
 public class Menu {
     
     private boolean flag = true;
+    
     private int opcion;
     private int opcionu;
+    
     String vector[] = new String[5];
     boolean buscarp=false;
     String buscarn;
+    
     private String palabra;
+       
     private boolean flag2 = true;
            
     public Menu(){
@@ -80,14 +84,17 @@ public class Menu {
 
                                 Scanner scb = new Scanner(System.in);
                                 buscarn = scb.nextLine();
-
+                                
                                 for(int i=0; i<vector.length; i++){
                                     if(buscarn.equalsIgnoreCase(vector[i])){
-                                        buscarp=true;
+                                        System.out.println(vector);
                                     }else{
-                                        System.out.println("No existe este usuario");
+                                         System.out.println("No existe este usuario");
                                     }
                                 }
+                                
+                                
+                                
                                 System.out.println("MENU DE USUARIOS");
                                 System.out.println("1. Ingresar Usuarios");
                                 System.out.println("2. Mostrar Todos Los Usuarios");
@@ -111,12 +118,28 @@ public class Menu {
                 //PALINDROMAS
                 
                 case 2:
+                    
                     System.out.println("PALABRAS PALINDROMAS");
                     System.out.println("Ingresar Palabra");
                     
                     Scanner scp = new Scanner(System.in);
                     palabra = scp.nextLine();
-                                       
+                    
+                    for(int i=0; i<palabra.length(); i++){
+                        if(palabra.charAt(i) == palabra.charAt(palabra.length()-1-i)){
+                            System.out.println("Es palindroma");
+                        } 
+                        else{
+                            System.out.println("No palindroma");
+                        }
+                    }
+                    
+                    System.out.println("TAREA 3");
+                    System.out.println("201602491");
+                    System.out.println("1. Usuarios");
+                    System.out.println("2. Palabras Palíndromas");
+                    System.out.println("3. Salir");
+                    
                 break;
                 
                 case 3:
@@ -124,7 +147,12 @@ public class Menu {
                 break;
             
             }
-                       
+
+            
+                
+               
+                    
+           
         }
                 
     }

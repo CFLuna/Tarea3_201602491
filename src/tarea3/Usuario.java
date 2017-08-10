@@ -39,7 +39,7 @@ public class Usuario {
             
             for(int i=0; i<vector.length; i++){
                 if(buscarn.equalsIgnoreCase(vector[i])){
-                    buscarp=true;
+                   System.out.println(vector);
                 }else{
                     System.out.println("No existe este usuario");
                 }
