@@ -20,8 +20,11 @@ public class Menu {
     private String palabra;
        
     private boolean flag2 = true;
-           
+       
+   
     public Menu(){
+        
+        
                 
         System.out.println("TAREA 3");
         System.out.println("201602491");
@@ -84,15 +87,18 @@ public class Menu {
 
                                 Scanner scb = new Scanner(System.in);
                                 buscarn = scb.nextLine();
-                                
+                                boolean existe= false;
                                 for(int i=0; i<vector.length; i++){
                                     if(buscarn.equalsIgnoreCase(vector[i])){
-                                        System.out.println(vector);
-                                    }else{
-                                         System.out.println("No existe este usuario");
+                                        existe=true;
+                                        break;
                                     }
                                 }
-                                
+                                if(existe){
+                                    System.out.println("Si existe este usuario");
+                                }else{
+                                     System.out.println("No existe este usuario");
+                                }
                                 
                                 
                                 System.out.println("MENU DE USUARIOS");
@@ -124,16 +130,25 @@ public class Menu {
                     
                     Scanner scp = new Scanner(System.in);
                     palabra = scp.nextLine();
+                    String palabraInv = "";
+                    for (int x=palabra.length()-1;x>=0;x--){
+                        palabraInv = palabraInv + palabra.charAt(x);
+                    }
                     
-                    for(int i=0; i<palabra.length(); i++){
+                    /*for(int i=0; i<palabra.length(); i++){
                         if(palabra.charAt(i) == palabra.charAt(palabra.length()-1-i)){
                             System.out.println("Es palindroma");
                         } 
                         else{
-                            System.out.println("No palindroma");
+                            System.out.println("No es palindroma");
                         }
+                    }*/
+                    if(palabra.equals(palabraInv)){
+                        System.out.println("Es palindroma");
+                    } 
+                    else{
+                        System.out.println("No es palindroma");
                     }
-                    
                     System.out.println("TAREA 3");
                     System.out.println("201602491");
                     System.out.println("1. Usuarios");
